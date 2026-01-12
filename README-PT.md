@@ -36,4 +36,4 @@ O projeto foi estruturado de forma modular. Para rodar a solução de um dia esp
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/advent-of-code-2025.git
+   git clone https://github.com/FLS-7/advent-of-code-2025-py.git
