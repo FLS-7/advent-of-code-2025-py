@@ -1,77 +1,39 @@
-🎄 Advent of Code 2025 - Algorithmic Solutions
+# 🎄 Advent of Code 2025 - Soluções Algorítmicas
 
+![Language](https://img.shields.io/badge/Language-Python%203.11%2B-blue?style=for-the-badge&logo=python)
+![Focus](https://img.shields.io/badge/Focus-Algorithms%20%26%20Data%20Structures-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Em%20Progresso-orange?style=for-the-badge)
 
+## 📌 Sobre o Projeto
 
-📌 About The Project
-This repository documents my journey through the Advent of Code 2025.
-My main goal here is not just to find the answer, but to write efficient, readable, and scalable code. I treat each puzzle as a software engineering challenge, focusing on:
+Este repositório documenta minha jornada através do **Advent of Code 2025**.
 
-Big O Notation: Optimizing time and space complexity.
-Clean Code: Using meaningful variable names and modular functions.
-Pythonic Patterns: Utilizing List Comprehensions, Generators, and Type Hinting.
+Meu objetivo principal aqui não é apenas encontrar a resposta correta, mas escrever **código eficiente, legível e escalável**. Trato cada *puzzle* como um desafio de engenharia de software, focando em:
 
-📂 Progress & Key Concepts
-Below is a summary of the challenges solved so far, highlighting the technical concepts applied to solve them efficiently.
+*   **Notação Big O:** Otimização de complexidade de tempo e espaço (evitar força bruta desnecessária).
+*   **Clean Code:** Uso de nomes de variáveis significativos, funções modulares e documentação.
+*   **Padrões "Pythonic":** Utilização de recursos nativos da linguagem como *List Comprehensions*, *Generators* e *Type Hinting*.
 
+## 📂 Progresso e Conceitos Técnicos
 
+Abaixo está um resumo dos desafios resolvidos até o momento, destacando os conceitos técnicos aplicados para solucioná-los de forma eficiente.
 
+| Dia | Foco do Desafio | Conceitos & Bibliotecas | Complexidade (Tempo) |
+| :--- | :--- | :--- | :--- |
+| **01** | Tratamento de Dados & Arrays | `List Comprehension`, `Zip`, `Ordenação` | O(N log N) |
+| **02** | Lógica Condicional | `Controle de Fluxo`, `Validação de Dados` | O(N) |
+| **03** | Manipulação de Strings | `Regex (módulo re)`, `Pattern Matching` | O(N) |
+| **04** | Teoria de Conjuntos / Grids | `Sets`, `Interseção/União`, `Matrizes` | O(N*M) |
+| **08** | Estruturas de Dados | `HashMaps (Dicionários)`, `Análise de Frequência` | O(N) |
+| **09** | Recursão / Pilha | `Funções Recursivas`, `Lógica de Pilha (Stack)` | O(N) |
+| **10** | Grafos / Busca | `Busca em Largura (BFS)`, `Filas (Queue)`, `Navegação 2D` | O(V + E) |
 
+> *Nota: Os dias 5 a 7 foram pulados estrategicamente para priorizar os desafios de maior carga algorítmica da segunda semana.*
 
+## 🚀 Como Executar
 
+O projeto foi estruturado de forma modular. Para rodar a solução de um dia específico:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DayChallenge FocusKey Concepts & LibrariesTime Complexity01Input Parsing & ArraysList Comprehension, Zip, SortingO(N log N)02Conditional LogicControl Flow, Data ValidationO(N)03String ManipulationRegex (re module), Pattern MatchingO(N)04Set Theory / GridsSets, Intersection/Union, Matrix TraversalO(N*M)08Data StructuresHashMaps (Dictionaries), Frequency AnalysisO(N)09Recursion / StackRecursion, Stack Implementation, BacktrackingO(N)10Graph Theory / BFSBreadth-First Search (BFS), Queue, 2D Grid NavigationO(V + E)
-
-Note: Days 5-7 were skipped to prioritize the more algorithmic-heavy challenges of the second week.
-
-🚀 How to Run
-I structured the project to be modular. To run a specific day's solution:
-
-Clone the repository:
-git clone https://github.com/SEU_USUARIO/advent-of-code-2025.git
-
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/FLS-7/advent-of-code-2025-py.git
