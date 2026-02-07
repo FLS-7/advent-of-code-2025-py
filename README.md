@@ -4,6 +4,10 @@
 ![Focus](https://img.shields.io/badge/Focus-Algorithms%20%26%20Data%20Structures-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge)
 
+<p align="center">
+  <b>Leia em Português:</b> <a href="README-PT.md">🇧🇷 Português</a>
+</p>
+
 ## 📌 About The Project
 
 This repository documents my journey through the **Advent of Code 2025**. 
