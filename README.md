@@ -22,17 +22,18 @@ My main goal here is not just to find the answer, but to write **efficient, read
 
 Below is a summary of the challenges solved so far, highlighting the technical concepts applied to solve them efficiently.
 
-| Day | Challenge Focus | Key Concepts & Libraries | Time Complexity |
-| :--- | :--- | :--- | :--- |
-| **01** | Input Parsing & Arrays | `List Comprehension`, `Zip`, `Sorting` | O(N log N) |
-| **02** | Conditional Logic | `Control Flow`, `Data Validation` | O(N) |
-| **03** | String Manipulation | `Regex (re module)`, `Pattern Matching` | O(N) |
-| **04** | Set Theory / Grids | `Sets`, `Intersection/Union`, `Matrix Traversal` | O(N*M) |
-| **08** | Data Structures | `HashMaps (Dictionaries)`, `Frequency Analysis` | O(N) |
-| **09** | Recursion / Stack | `Recursion`, `Stack Implementation`, `Backtracking` | O(N) |
-| **10** | Graph Theory / BFS | `Breadth-First Search (BFS)`, `Queue`, `2D Grid Navigation` | O(V + E) |
-
-> *Note: Days 5-7 were skipped to prioritize the more algorithmic-heavy challenges of the second week.*
+| Day | Title | Key Concepts & Libraries | Time Complexity | Status
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | Secret Entrance | `Modulo Arithmetic`, `Simulation` | O(N) | ✅
+| **02** | Gift Shop | `String repetition`, `Interval checking` | O(N) | ✅
+| **03** | Lobby | `Greedy Windows`, `Nested Loop Combinations` | O(N2) | ✅
+| **04** | Printing Department | `2D Grid Neighbor Traversal`, `Iterative Removal` | O(N2) | ✅
+| **05** | Cafeteria | ? | ? | 🔄
+| **06** | Trash Compactor | ? | ? | 🔄
+| **07** | Laboratories  | ? | ? | 🔄
+| **08** | Playground | `Union-Find (DSU)`, `3D Euclidean Distance` | O(N2 log N) | ✅
+| **09** | Movie Theater | `Ray Casting (Point-in-Polygon)`, `Intersection Logic`| O(N3) | ✅
+| **10** | Factory | `BFS (Part 1)`, `Linear Programming/Matrices (Part 2)` | O(2L) | ✅
 
 ## 🚀 How to Run
 
