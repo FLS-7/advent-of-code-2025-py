@@ -5,6 +5,4 @@
   - Identifica segmentos de colunas não vazias (separadas por colunas somente com espaços)
   - Para cada segmento, extrai números por linha e aplica soma ou produto conforme operador na última linha
 - Arquivo de entrada: usa o input.txt desta pasta
-- Estado: rascunho com foco em clareza; não cobre todos os casos de formatação
-
-Resultado atual com o seu input.txt: “Grand total: 0”
+- Estado: ~75% completo — agora seleciona heurística da “última linha com operador” e usa coluna vazia que desconsidera a coluna caso haja operador; parsing por dígitos ao invés de replace, mais robusto a ruídos

@@ -17,11 +17,21 @@ if not linhas:
 largura = max(len(l) for l in linhas)
 grade = [l.ljust(largura) for l in linhas]
 
-# Última linha contém os operadores (+ ou *) para cada problema
-linha_operadores = grade[-1]
+# Heurística: escolher a última linha que contenha ao menos um '+' ou '*'
+linha_operadores = None
+for r in range(len(grade) - 1, -1, -1):
+    if any(ch in "+*" for ch in grade[r]):
+        linha_operadores = grade[r]
+        break
+if linha_operadores is None:
+    print("Grand total: 0")
+    raise SystemExit(0)
 
 # Identificar colunas de separação: uma coluna é separadora se todos os caracteres nessa coluna são espaço
 def coluna_vazia(c):
+    # separador se todos os caracteres são espaço E não há operador nesta coluna
+    if linha_operadores[c] in "+*":
+        return False
     for r in range(len(grade)):
         if grade[r][c] != " ":
             return False
@@ -45,7 +55,7 @@ while c < largura:
 # Para cada segmento, extrair números por linha e operador na última linha
 grand_total = 0
 for inicio, fim in segmentos:
-    # Operador: primeiro símbolo não espaço na faixa do segmento na última linha
+    # Operador: primeiro símbolo '+' ou '*' na faixa do segmento
     op = None
     bloco_op = linha_operadores[inicio:fim]
     if "+" in bloco_op:
@@ -58,7 +68,8 @@ for inicio, fim in segmentos:
 
     numeros = []
     for r in range(len(grade) - 1):  # exceto a linha de operadores
-        s = grade[r][inicio:fim].replace(" ", "")
+        # extrai apenas dígitos dentro do segmento; ignora espaços e símbolos
+        s = "".join(ch for ch in grade[r][inicio:fim] if ch.isdigit())
         if s:
             try:
                 numeros.append(int(s))
