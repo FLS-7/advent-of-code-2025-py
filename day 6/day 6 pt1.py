@@ -52,6 +52,13 @@ while c < largura:
     fim = c  # exclusivo
     segmentos.append((inicio, fim))
 
+# filtra segmentos sem dígitos nas linhas acima do operador
+segmentos = [
+    (inicio, fim)
+    for (inicio, fim) in segmentos
+    if any(any(ch.isdigit() for ch in grade[r][inicio:fim]) for r in range(len(grade) - 1))
+]
+
 # Para cada segmento, extrair números por linha e operador na última linha
 grand_total = 0
 for inicio, fim in segmentos:
