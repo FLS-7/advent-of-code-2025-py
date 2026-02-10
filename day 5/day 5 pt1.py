@@ -36,7 +36,18 @@ if tem_ranges:
         if not l:
             continue
         a, b = map(int, l.split("-"))
+        if a > b:
+            a, b = b, a  # normaliza ranges invertidos
         ranges.append((a, b))
+    # unifica ranges sobrepostos/contíguos para acelerar consulta
+    ranges.sort()
+    unificados = []
+    for a, b in ranges:
+        if not unificados or a > unificados[-1][1] + 1:
+            unificados.append([a, b])
+        else:
+            unificados[-1][1] = max(unificados[-1][1], b)
+    ranges = [tuple(x) for x in unificados]
 
     ids = []
     for l in ids_brutos:
@@ -46,6 +57,7 @@ if tem_ranges:
         ids.append(int(l))
 
     def id_fresco(x):
+        # busca linear em poucos ranges unificados (suficiente para rascunho)
         for a, b in ranges:
             if a <= x <= b:
                 return True
