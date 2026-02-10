@@ -57,11 +57,7 @@ if tem_ranges:
         ids.append(int(l))
 
     def id_fresco(x):
-        # busca linear em poucos ranges unificados (suficiente para rascunho)
-        for a, b in ranges:
-            if a <= x <= b:
-                return True
-        return False
+        return any(a <= x <= b for a, b in ranges)
 
     total_frescos = sum(1 for x in ids if id_fresco(x))
     print(f"Total de IDs frescos: {total_frescos}")
