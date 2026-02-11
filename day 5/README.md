@@ -5,7 +5,7 @@
   - Se detectar ranges com formato “a-b” e IDs após a linha em branco, conta quantos IDs caem em qualquer range inclusivo
   - Caso contrário, faz fallback simples interpretando o input como grade e conta células '@' com menos que 4 vizinhos '@'
 - Arquivo de entrada: usa o input.txt desta pasta
-- Estado: ~75% completo — agora normaliza ranges invertidos (ex.: 18-12), unifica ranges sobrepostos/contíguos para acelerar a checagem e mantém fallback de grade
+- Estado: ~90% completo — normaliza ranges invertidos, unifica ranges sobrepostos/contíguos e usa busca binária sobre os intervalos; mantém fallback de grade para entradas fora do formato ranges/IDs
 
 Resultados atuais:
 
