@@ -4,6 +4,7 @@
 # TODO: robustez e validação de formato; unificar ranges; otimizar.
 
 from math import prod
+from bisect import bisect_right
 
 with open("input.txt", "r", encoding="utf-8") as f:
     entrada_texto = f.read()
@@ -48,6 +49,7 @@ if tem_ranges:
         else:
             unificados[-1][1] = max(unificados[-1][1], b)
     ranges = [tuple(x) for x in unificados]
+    starts = [a for a, _ in ranges]
 
     ids = []
     for l in ids_brutos:
@@ -57,7 +59,8 @@ if tem_ranges:
         ids.append(int(l))
 
     def id_fresco(x):
-        return any(a <= x <= b for a, b in ranges)
+        i = bisect_right(starts, x) - 1
+        return i >= 0 and x <= ranges[i][1]
 
     total_frescos = sum(1 for x in ids if id_fresco(x))
     print(f"Total de IDs frescos: {total_frescos}")
