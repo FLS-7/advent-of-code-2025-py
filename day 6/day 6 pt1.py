@@ -70,8 +70,19 @@ for inicio, fim in segmentos:
     elif "*" in bloco_op:
         op = "*"
     else:
-        # TODO: se nenhum operador encontrado, ignorar segmento ou assumir soma
-        continue
+        # fallback: procurar operador em qualquer linha, privilegiando linhas mais baixas
+        found = None
+        for r in range(len(grade) - 1, -1, -1):
+            seg = grade[r][inicio:fim]
+            if "+" in seg:
+                found = "+"
+                break
+            if "*" in seg:
+                found = "*"
+                break
+        if not found:
+            continue
+        op = found
 
     numeros = []
     for r in range(len(grade) - 1):  # exceto a linha de operadores
