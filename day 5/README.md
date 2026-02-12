@@ -11,3 +11,7 @@ Resultados atuais:
 
 - Com input em ranges/IDs: imprime o total de IDs frescos (ex.: “Total de IDs frescos: 638”)
 - Com input em grade: imprime “Total (fallback grade): 1351”
+
+Pt2 (draft):
+
+- Lê o mesmo formato ranges/IDs e calcula “Total de IDs não frescos”, considerando múltiplos IDs por linha e números negativos.
