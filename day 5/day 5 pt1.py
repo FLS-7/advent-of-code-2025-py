@@ -5,6 +5,7 @@
 
 from math import prod
 from bisect import bisect_right
+import re
 
 with open("input.txt", "r", encoding="utf-8") as f:
     entrada_texto = f.read()
@@ -36,9 +37,12 @@ if tem_ranges:
         l = l.strip()
         if not l:
             continue
-        a, b = map(int, l.split("-"))
+        nums = re.findall(r"-?\d+", l)
+        if len(nums) < 2:
+            continue
+        a, b = map(int, nums[:2])
         if a > b:
-            a, b = b, a  # normaliza ranges invertidos
+            a, b = b, a
         ranges.append((a, b))
     # unifica ranges sobrepostos/contíguos para acelerar consulta
     ranges.sort()
@@ -56,7 +60,9 @@ if tem_ranges:
         l = l.strip()
         if not l:
             continue
-        ids.append(int(l))
+        m = re.search(r"-?\d+", l)
+        if m:
+            ids.append(int(m.group(0)))
 
     def id_fresco(x):
         i = bisect_right(starts, x) - 1
