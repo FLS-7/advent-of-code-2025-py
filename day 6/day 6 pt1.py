@@ -4,6 +4,7 @@
 # TODO: robustez para múltiplas linhas em branco, largura variável, operadores perdidos, colunas com ruído.
 
 from math import prod
+import re
 
 with open("input.txt", "r", encoding="utf-8") as f:
     entrada_texto = f.read()
@@ -56,7 +57,7 @@ while c < largura:
 segmentos = [
     (inicio, fim)
     for (inicio, fim) in segmentos
-    if any(any(ch.isdigit() for ch in grade[r][inicio:fim]) for r in range(len(grade) - 1))
+    if any(re.search(r"-?\d+", grade[r][inicio:fim]) for r in range(len(grade) - 1))
 ]
 
 # Para cada segmento, extrair números por linha e operador na última linha
@@ -85,15 +86,10 @@ for inicio, fim in segmentos:
         op = found
 
     numeros = []
-    for r in range(len(grade) - 1):  # exceto a linha de operadores
-        # extrai apenas dígitos dentro do segmento; ignora espaços e símbolos
-        s = "".join(ch for ch in grade[r][inicio:fim] if ch.isdigit())
-        if s:
-            try:
-                numeros.append(int(s))
-            except ValueError:
-                # TODO: lidar com caracteres estranhos ou linhas com múltiplos números
-                pass
+    for r in range(len(grade) - 1):
+        nums = re.findall(r"-?\d+", grade[r][inicio:fim])
+        if nums:
+            numeros.extend(map(int, nums))
 
     if not numeros:
         continue
