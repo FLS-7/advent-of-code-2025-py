@@ -6,3 +6,11 @@
   - Para cada segmento, extrai números por linha e aplica soma ou produto conforme operador na última linha
 - Arquivo de entrada: usa o input.txt desta pasta
 - Estado: ~90% completo — heurística da “última linha com operador”, separadores que respeitam operadores, filtragem de segmentos sem dígitos e fallback para busca de operador em linhas acima; parsing por dígitos para maior robustez
+
+Resultados:
+
+- Pt1: “Grand total: 5784380717354”
+
+Pt2 (draft):
+
+- Calcula o maior resultado por segmento (soma ou produto) com fallback de operador e extração de números por regex.
