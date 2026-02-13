@@ -37,7 +37,7 @@ if tem_ranges:
         l = l.strip()
         if not l:
             continue
-        nums = re.findall(r"-?\d+", l)
+        nums = re.findall(r"\d+", l)
         if len(nums) < 2:
             continue
         a, b = map(int, nums[:2])
@@ -60,7 +60,7 @@ if tem_ranges:
         l = l.strip()
         if not l:
             continue
-        m = re.search(r"-?\d+", l)
+        m = re.search(r"\d+", l)
         if m:
             ids.append(int(m.group(0)))
 
