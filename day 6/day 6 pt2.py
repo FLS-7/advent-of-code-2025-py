@@ -49,6 +49,7 @@ segmentos = [
 ]
 
 max_resultado = None
+min_resultado = None
 for inicio, fim in segmentos:
     op = None
     bloco_op = linha_operadores[inicio:fim]
@@ -80,5 +81,8 @@ for inicio, fim in segmentos:
     resultado = sum(numeros) if op == "+" else prod(numeros)
     if max_resultado is None or resultado > max_resultado:
         max_resultado = resultado
+    if min_resultado is None or resultado < min_resultado:
+        min_resultado = resultado
 
 print(f"Max por segmento: {max_resultado or 0}")
+print(f"Min por segmento: {min_resultado or 0}")
