@@ -11,6 +11,6 @@ Resultados:
 
 - Pt1: “Grand total: 5784380717354”
 
-Pt2 (draft):
+Pt2 (60%):
 
-- Calcula o maior resultado por segmento (soma ou produto) com fallback de operador e extração de números por regex.
+- Calcula o maior e o menor resultado por segmento (soma ou produto), com fallback de operador e extração de números por regex.
