@@ -42,3 +42,5 @@ def fresco(x):
 
 total_nao_frescos = sum(1 for x in ids if not fresco(x))
 print(f"Total de IDs nao frescos: {total_nao_frescos}")
+total_frescos = sum(1 for x in ids if fresco(x))
+print(f"Total de IDs frescos: {total_frescos}")
